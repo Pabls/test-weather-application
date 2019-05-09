@@ -8,6 +8,5 @@ data class WeatherForecast(
     @SerializedName("message") @Expose val message: String,
     @SerializedName("city") @Expose val city: City,
     @SerializedName("cnt") @Expose val cnt: Int,
-    @SerializedName("country") @Expose val country: String,
-    @SerializedName("list") @Expose val days: List<DayWeather>
+    @SerializedName("list") @Expose val days: MutableList<DayWeather>
 )

@@ -11,6 +11,6 @@ data class DayWeather(
     @SerializedName("deg") @Expose val degrees: Int,
     @SerializedName("clouds") @Expose val clouds: Byte,
     @SerializedName("temp") @Expose val temperature: Temperature,
-    @SerializedName("weather") @Expose val weather: Weather,
+    @SerializedName("weather") @Expose val weather: MutableList<Weather>,
     @SerializedName("snow") @Expose val snow: Double?
 )
