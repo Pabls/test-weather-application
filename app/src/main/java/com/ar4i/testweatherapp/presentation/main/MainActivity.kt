@@ -1,7 +1,8 @@
-package com.ar4i.testweatherapp
+package com.ar4i.testweatherapp.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ar4i.testweatherapp.R
 
 class MainActivity : AppCompatActivity() {
 
