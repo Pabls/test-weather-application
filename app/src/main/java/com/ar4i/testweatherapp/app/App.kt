@@ -22,10 +22,6 @@ class App : Application() {
     }
 
     private fun initStetho() {
-        val initializerBuilder = Stetho.newInitializerBuilder(this)
-        initializerBuilder.enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
-        initializerBuilder.enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
-        val initializer = initializerBuilder.build()
-        Stetho.initialize(initializer)
+        Stetho.initializeWithDefaults(this);
     }
 }

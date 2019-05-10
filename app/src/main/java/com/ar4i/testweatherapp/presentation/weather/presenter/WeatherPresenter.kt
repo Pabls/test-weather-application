@@ -1,5 +1,6 @@
 package com.ar4i.testweatherapp.presentation.weather.presenter
 
+import com.ar4i.testweatherapp.data.network.response.WeatherDay
 import com.ar4i.testweatherapp.data.repositories.IWeatherRepository
 import com.ar4i.testweatherapp.presentation.base.presenter.BasePresenter
 import com.ar4i.testweatherapp.presentation.weather.view.IWeatherView
@@ -19,6 +20,7 @@ class WeatherPresenter : BasePresenter<IWeatherView> {
     var weatherRepository: IWeatherRepository
     var cityId: Long
     var appId: String
+    lateinit var days: List<WeatherDay>
 
     override fun attachView(v: IWeatherView) {
         super.attachView(v)
@@ -26,7 +28,7 @@ class WeatherPresenter : BasePresenter<IWeatherView> {
 
         track(getView()!!.onItemClick()
             .subscribe { index ->
-                getView()?.showMessage(index.toString())
+                getView()?.navigateToDetails(days.get(index))
             }
         )
     }
@@ -37,8 +39,10 @@ class WeatherPresenter : BasePresenter<IWeatherView> {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ days ->
+                    this.days = days
                     getView()?.showData(days)
                 }, { error ->
+                    getView()?.showError()
                     error.message?.let { getView()?.showMessage(it) }
                 })
         )

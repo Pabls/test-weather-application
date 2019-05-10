@@ -8,8 +8,9 @@ import dagger.Provides
 
 @Module
 class PresentationModule {
+
     @Provides
     fun provideWeatherPresenter(weatherRepository: WeatherRepository): WeatherPresenter {
-        return WeatherPresenter(weatherRepository, BuildConfig.CITY_ID, BuildConfig.APPLICATION_ID)
+        return WeatherPresenter(weatherRepository, BuildConfig.CITY_ID, BuildConfig.APP_ID)
     }
 }

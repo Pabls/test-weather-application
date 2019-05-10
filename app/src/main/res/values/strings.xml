@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Weather in Moscow</string>
 
+    <string name="error">Something went wrong. Try again.</string>
+
     <string name="item_weather_day_text_date">Date :</string>
     <string name="item_weather_day_text_day">Day :</string>
     <string name="item_weather_day_text_min">Min :</string>

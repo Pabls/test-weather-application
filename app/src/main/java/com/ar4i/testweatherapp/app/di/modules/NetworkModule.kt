@@ -32,7 +32,7 @@ class NetworkModule {
     @Singleton
     fun provideOkHttpClient(stethoInterceptor: StethoInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(stethoInterceptor)
+            .addNetworkInterceptor(stethoInterceptor)
             .build()
     }
 

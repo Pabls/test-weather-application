@@ -4,4 +4,5 @@ interface IBaseView {
     fun showLoading()
     fun hideLoading()
     fun showMessage(message: String)
+    fun showError()
 }
