@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/sv_container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/tv_date"
+                style="@style/AppTheme.Title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@tools:sample/date/ddmmyy"/>
+
+        <TextView
+                android:id="@+id/tv_temperature_title"
+                style="@style/AppTheme.Title"
+                android:text="@string/details_fragment_text_temperature"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+                android:id="@+id/tv_morning_label"
+                android:text="@string/details_fragment_text_morning"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_temperature_title"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+                android:id="@+id/tv_day_label"
+                android:text="@string/details_fragment_text_day"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_morning_label"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+                android:id="@+id/tv_evening_label"
+                android:text="@string/details_fragment_text_evening"
+                style="@style/AppTheme.Text"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_day_label"/>
+
+        <TextView
+                android:id="@+id/tv_night_label"
+                android:text="@string/details_fragment_text_night"
+                style="@style/AppTheme.Text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_evening_label"/>
+
+        <TextView
+                android:id="@+id/tv_air_title"
+                android:text="@string/details_fragment_text_air"
+                style="@style/AppTheme.Title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_night_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+                android:id="@+id/tv_humidity_label"
+                android:text="@string/details_fragment_text_humidity"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_air_title"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+                android:id="@+id/tv_pressure_label"
+                android:text="@string/details_fragment_text_pressure"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_humidity_label"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+                android:id="@+id/tv_wind_title"
+                android:text="@string/details_fragment_text_wind"
+                style="@style/AppTheme.Title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pressure_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+
+                android:id="@+id/tv_speed_label"
+                android:text="@string/details_fragment_text_speed"
+                style="@style/AppTheme.Text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_wind_title"/>
+
+        <TextView
+                android:id="@+id/tv_deg_label"
+                android:text="@string/details_fragment_text_deg"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_speed_label"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+                android:text="@string/details_fragment_text_weather"
+                style="@style/AppTheme.Title"
+                android:id="@+id/tv_weather_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deg_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+                android:text="@string/details_fragment_text_description"
+                style="@style/AppTheme.Text"
+                android:id="@+id/tv_description_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_weather_title"/>
+
+        <TextView
+                android:text="@string/details_fragment_text_clouds"
+                style="@style/AppTheme.Text"
+                android:id="@+id/tv_clouds_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description_label"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+                android:text="@string/details_fragment_text_snow"
+                style="@style/AppTheme.Text"
+                android:id="@+id/tv_snow_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_clouds_label"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <TextView
+                android:id="@+id/tv_morning_temp"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_temperature_title"
+                app:layout_constraintStart_toEndOf="@+id/tv_morning_label"/>
+
+        <TextView
+                android:id="@+id/tv_day_temp"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_morning_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_day_label"/>
+
+        <TextView
+                android:id="@+id/tv_evening_temp"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_day_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_evening_label"/>
+
+        <TextView
+                android:id="@+id/tv_night_temp"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_evening_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_night_label"/>
+
+        <TextView
+                android:id="@+id/tv_humidity"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_air_title"
+                app:layout_constraintStart_toEndOf="@+id/tv_humidity_label"/>
+
+        <TextView
+                android:id="@+id/tv_pressure"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_humidity_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_pressure_label"/>
+
+        <TextView
+                android:id="@+id/tv_speed"
+                style="@style/AppTheme.Text"
+                app:layout_constraintStart_toEndOf="@+id/tv_speed_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_wind_title"/>
+
+        <TextView
+                android:id="@+id/tv_deg"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_speed_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_deg_label"/>
+
+        <TextView
+                android:id="@+id/tv_description"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_weather_title"
+                app:layout_constraintStart_toEndOf="@+id/tv_description_label"/>
+
+        <TextView
+                android:id="@+id/tv_clouds"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_clouds_label"/>
+
+        <TextView
+                android:id="@+id/tv_snow"
+                android:text="@string/details_fragment_text_default_snow_value"
+                style="@style/AppTheme.Text"
+                app:layout_constraintTop_toBottomOf="@+id/tv_clouds_label"
+                app:layout_constraintStart_toEndOf="@+id/tv_snow_label"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

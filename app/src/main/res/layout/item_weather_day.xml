@@ -16,13 +16,13 @@
         <TextView
                 android:id="@+id/tv_date_label"
                 android:text="@string/item_weather_day_text_date"
-                style="@style/AppTheme.CardView.Text"
+                style="@style/AppTheme.Text"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
                 android:id="@+id/tv_date"
-                style="@style/AppTheme.CardView.Text"
+                style="@style/AppTheme.Text"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_date_label"
                 tools:text="@tools:sample/date/ddmmyy"/>
@@ -30,13 +30,13 @@
         <TextView
                 android:id="@+id/tv_day_label"
                 android:text="@string/item_weather_day_text_day"
-                style="@style/AppTheme.CardView.Text"
+                style="@style/AppTheme.Text"
                 app:layout_constraintTop_toBottomOf="@+id/tv_date_label"
                 app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
                 android:id="@+id/tv_day"
-                style="@style/AppTheme.CardView.Text"
+                style="@style/AppTheme.Text"
                 app:layout_constraintTop_toBottomOf="@+id/tv_date"
                 app:layout_constraintStart_toEndOf="@+id/tv_day_label"
                 tools:text="@tools:sample/us_zipcodes"/>
@@ -44,13 +44,13 @@
         <TextView
                 android:id="@+id/tv_min_label"
                 android:text="@string/item_weather_day_text_min"
-                style="@style/AppTheme.CardView.Text"
+                style="@style/AppTheme.Text"
                 app:layout_constraintTop_toBottomOf="@+id/tv_day_label"
                 app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
                 android:id="@+id/tv_min"
-                style="@style/AppTheme.CardView.Text"
+                style="@style/AppTheme.Text"
                 app:layout_constraintTop_toBottomOf="@+id/tv_day"
                 app:layout_constraintStart_toEndOf="@+id/tv_min_label"
                 tools:text="@tools:sample/us_zipcodes"/>
@@ -59,12 +59,12 @@
                 android:id="@+id/tv_max_label"
                 android:text="@string/item_weather_day_text_max"
                 app:layout_constraintStart_toStartOf="parent"
-                style="@style/AppTheme.CardView.Text"
+                style="@style/AppTheme.Text"
                 app:layout_constraintTop_toBottomOf="@+id/tv_min_label"/>
 
         <TextView
                 android:id="@+id/tv_max"
-                style="@style/AppTheme.CardView.Text"
+                style="@style/AppTheme.Text"
                 app:layout_constraintTop_toBottomOf="@+id/tv_min"
                 app:layout_constraintStart_toEndOf="@+id/tv_max_label"
                 tools:text="@tools:sample/us_zipcodes"/>
@@ -72,7 +72,7 @@
         <TextView
                 android:id="@+id/tv_weather_label"
                 android:text="@string/item_weather_day_text_weather"
-                style="@style/AppTheme.CardView.Text"
+                style="@style/AppTheme.Text"
                 app:layout_constraintTop_toBottomOf="@+id/tv_max_label"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
 
         <TextView
                 android:id="@+id/tv_weather"
-                style="@style/AppTheme.CardView.Text"
+                style="@style/AppTheme.Text"
                 app:layout_constraintTop_toBottomOf="@+id/tv_max"
                 app:layout_constraintStart_toEndOf="@+id/tv_weather_label"
                 app:layout_constraintBottom_toBottomOf="parent"

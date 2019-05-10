@@ -7,6 +7,24 @@
     <string name="item_weather_day_text_max">Max :</string>
     <string name="item_weather_day_text_weather">Weather :</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="details_fragment_text_temperature">TEMPERATURE</string>
+    <string name="details_fragment_text_morning">Morning:</string>
+    <string name="details_fragment_text_day">Day:</string>
+    <string name="details_fragment_text_evening">Evening:</string>
+    <string name="details_fragment_text_night">Night:</string>
+
+    <string name="details_fragment_text_air">AIR</string>
+    <string name="details_fragment_text_pressure">Pressure :</string>
+    <string name="details_fragment_text_humidity">Humidity :</string>
+
+    <string name="details_fragment_text_wind">WIND</string>
+    <string name="details_fragment_text_speed">Speed :</string>
+    <string name="details_fragment_text_deg">Deg :</string>
+
+    <string name="details_fragment_text_weather">WEATHER</string>
+    <string name="details_fragment_text_description">Description :</string>
+    <string name="details_fragment_text_clouds">Clouds :</string>
+    <string name="details_fragment_text_snow">Snow :</string>
+
+    <string name="details_fragment_text_default_snow_value">0</string>
 </resources>
