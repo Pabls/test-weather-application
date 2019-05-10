@@ -6,7 +6,6 @@ import com.ar4i.testweatherapp.app.di.components.DaggerApplicationComponent
 import com.facebook.stetho.Stetho
 
 
-
 class App : Application() {
 
     companion object {
@@ -19,6 +18,10 @@ class App : Application() {
             .builder()
             .build()
 
+        initStetho()
+    }
+
+    private fun initStetho() {
         val initializerBuilder = Stetho.newInitializerBuilder(this)
         initializerBuilder.enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
         initializerBuilder.enableDumpapp(Stetho.defaultDumperPluginsProvider(this))

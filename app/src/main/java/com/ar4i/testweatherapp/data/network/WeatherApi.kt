@@ -9,12 +9,15 @@ interface WeatherApi {
 
     companion object {
         private const val URL_PREFIX: String = "data/2.5/"
-        private const val FORECAST: String = "forecast/daily"
+        private const val URL_FORECAST: String = "forecast/daily"
+
+        private const val QUERY_ID: String = "id"
+        private const val QUERY_APPID: String = "appid"
     }
 
-    @GET(URL_PREFIX + FORECAST)
+    @GET(URL_PREFIX + URL_FORECAST)
     fun getForecastByCityId(
-        @Query("id") cityId: Long,
-        @Query("appid") appId: String
+        @Query(QUERY_ID) cityId: Long,
+        @Query(QUERY_APPID) appId: String
     ): Single<WeatherForecast>
 }

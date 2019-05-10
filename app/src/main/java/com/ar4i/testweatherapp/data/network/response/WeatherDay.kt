@@ -3,7 +3,7 @@ package com.ar4i.testweatherapp.data.network.response
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class DayWeather(
+data class WeatherDay(
     @SerializedName("dt") @Expose val date: Long,
     @SerializedName("pressure") @Expose val pressure: Double,
     @SerializedName("humidity") @Expose val humidity: Byte,
