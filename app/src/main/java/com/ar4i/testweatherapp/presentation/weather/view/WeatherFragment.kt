@@ -2,7 +2,10 @@ package com.ar4i.testweatherapp.presentation.weather.view
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ProgressBar
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.ViewCompat
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import com.ar4i.testweatherapp.R
 import com.ar4i.testweatherapp.data.network.response.WeatherDay
@@ -10,6 +13,7 @@ import com.ar4i.testweatherapp.presentation.base.view.BaseFragment
 import com.ar4i.testweatherapp.presentation.details.DetailsFragment
 import com.ar4i.testweatherapp.presentation.weather.presenter.WeatherPresenter
 import io.reactivex.Observable
+import kotlinx.android.synthetic.main.item_weather_day.view.*
 import javax.inject.Inject
 
 class WeatherFragment : BaseFragment(), IWeatherView {
@@ -27,6 +31,7 @@ class WeatherFragment : BaseFragment(), IWeatherView {
     lateinit var rvDays: RecyclerView
     lateinit var toolbar: Toolbar
     lateinit var vError: View
+    lateinit var progressBar: ProgressBar
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -51,6 +56,14 @@ class WeatherFragment : BaseFragment(), IWeatherView {
         showError(true)
     }
 
+    override fun showLoading() {
+        progressBar.visibility = View.VISIBLE
+    }
+
+    override fun hideLoading() {
+        progressBar.visibility = View.GONE
+    }
+
     override fun showData(days: List<WeatherDay>) {
         showError(false)
         adapter.addAllAndNotify(days)
@@ -60,9 +73,14 @@ class WeatherFragment : BaseFragment(), IWeatherView {
         return adapter.itemClickEvent()
     }
 
-    override fun navigateToDetails(weatherDay: WeatherDay) {
-        var fm = activity?.supportFragmentManager
-        fm?.beginTransaction()
+    override fun navigateToDetails(weatherDay: WeatherDay, position: Int) {
+        var viewHolder = rvDays.findViewHolderForAdapterPosition(position)
+        var textview = viewHolder?.itemView?.tv_date!!
+        var transitionName = ViewCompat.getTransitionName(textview)
+        var fragmentManager = activity?.supportFragmentManager
+        fragmentManager?.beginTransaction()
+            ?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            ?.addSharedElement(textview, transitionName!!)
             ?.addToBackStack(null)
             ?.replace(R.id.fl_container, DetailsFragment.newInstance(weatherDay))
             ?.commit()
@@ -71,6 +89,7 @@ class WeatherFragment : BaseFragment(), IWeatherView {
     private fun initView() {
         vError = activity!!.findViewById(R.id.v_error)
         rvDays = activity!!.findViewById(R.id.rv_days)
+        progressBar = activity!!.findViewById(R.id.progressBar)
         adapter = WeatherAdapter()
         rvDays.adapter = adapter
         intToolbar()
@@ -78,11 +97,10 @@ class WeatherFragment : BaseFragment(), IWeatherView {
 
     private fun intToolbar() {
         toolbar = activity!!.findViewById(R.id.toolbar)
-        if (toolbar != null) {
-            toolbar.navigationIcon = null
-            toolbar.title = getString(R.string.app_name)
-        }
+        toolbar.navigationIcon = null
+        toolbar.title = getString(R.string.app_name)
     }
+
 
     private fun showError(show: Boolean) {
         rvDays.visibility = if (show) View.GONE else View.VISIBLE

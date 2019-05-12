@@ -28,7 +28,7 @@ class WeatherPresenter : BasePresenter<IWeatherView> {
 
         track(getView()!!.onItemClick()
             .subscribe { index ->
-                getView()?.navigateToDetails(days.get(index))
+                getView()?.navigateToDetails(days[index], index)
             }
         )
     }
@@ -38,6 +38,8 @@ class WeatherPresenter : BasePresenter<IWeatherView> {
             weatherRepository.getForecastByCityId(cityId, appId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe { _ -> getView()?.showLoading() }
+                .doOnEvent({ _, _ -> getView()?.hideLoading() })
                 .subscribe({ days ->
                     this.days = days
                     getView()?.showData(days)

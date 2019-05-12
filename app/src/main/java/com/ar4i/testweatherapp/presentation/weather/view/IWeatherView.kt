@@ -7,5 +7,5 @@ import io.reactivex.Observable
 interface IWeatherView : IBaseView {
     fun showData(days: List<WeatherDay>)
     fun onItemClick(): Observable<Int>
-    fun navigateToDetails(weatherDay: WeatherDay)
+    fun navigateToDetails(weatherDay: WeatherDay, position: Int)
 }

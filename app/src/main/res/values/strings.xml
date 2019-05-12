@@ -29,4 +29,6 @@
     <string name="details_fragment_text_snow">Snow :</string>
 
     <string name="details_fragment_text_default_snow_value">0</string>
+
+    <string name="transition_name">date</string>
 </resources>

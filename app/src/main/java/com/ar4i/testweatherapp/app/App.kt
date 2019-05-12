@@ -22,6 +22,6 @@ class App : Application() {
     }
 
     private fun initStetho() {
-        Stetho.initializeWithDefaults(this);
+        Stetho.initializeWithDefaults(this)
     }
 }

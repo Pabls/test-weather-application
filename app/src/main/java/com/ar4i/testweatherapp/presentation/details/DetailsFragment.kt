@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.transition.TransitionInflater
 import com.ar4i.testweatherapp.R
 import com.ar4i.testweatherapp.data.network.response.WeatherDay
 
@@ -39,18 +40,21 @@ class DetailsFragment : Fragment() {
     lateinit var tvClouds: TextView
     lateinit var tvSnow: TextView
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition = TransitionInflater.from(activity).inflateTransition(android.R.transition.move)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_details, container, false);
+        return inflater.inflate(R.layout.fragment_details, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
         var arguments = arguments?.getSerializable(EXTRA_WEATHER_DAY) as WeatherDay
-        if (arguments != null) {
-            setDataToVIew(arguments)
-        }
-
+        tvDate.transitionName = arguments.date.toString()
+        setDataToView(arguments)
     }
 
     private fun initView() {
@@ -71,15 +75,13 @@ class DetailsFragment : Fragment() {
 
     private fun intToolbar() {
         toolbar = activity!!.findViewById(R.id.toolbar)
-        if (toolbar != null) {
-            toolbar.setNavigationIcon(R.drawable.ic_arrow)
-            toolbar.setNavigationOnClickListener(View.OnClickListener {
-                activity?.onBackPressed()
-            })
-        }
+        toolbar.setNavigationIcon(R.drawable.ic_arrow)
+        toolbar.setNavigationOnClickListener(View.OnClickListener {
+            activity?.onBackPressed()
+        })
     }
 
-    private fun setDataToVIew(weatherDay: WeatherDay) {
+    private fun setDataToView(weatherDay: WeatherDay) {
         tvDate.text = weatherDay.getDate()
         tvMorningTemp.text = weatherDay.temperature.morning.toString()
         tvDayTemp.text = weatherDay.temperature.day.toString()
@@ -91,7 +93,7 @@ class DetailsFragment : Fragment() {
         tvDeg.text = weatherDay.degrees.toString()
         tvDescription.text = weatherDay.weather[0].description
         tvClouds.text = weatherDay.clouds.toString()
-        tvSnow.text = weatherDay.snow.toString()
+        tvSnow.text = weatherDay.snow?.toString()
         toolbar.title = weatherDay.getDate()
     }
 }

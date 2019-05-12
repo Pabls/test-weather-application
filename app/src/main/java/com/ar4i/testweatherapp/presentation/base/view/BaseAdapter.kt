@@ -18,7 +18,7 @@ abstract class BaseAdapter<V, VH : BaseViewHolder<V>> : RecyclerView.Adapter<VH>
         return items.size
     }
 
-    private fun getItem(position: Int): V {
+    protected fun getItem(position: Int): V {
         return items.get(position)
     }
 

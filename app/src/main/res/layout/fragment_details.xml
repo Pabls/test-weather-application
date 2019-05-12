@@ -202,5 +202,44 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_clouds_label"
                 app:layout_constraintStart_toEndOf="@+id/tv_snow_label"/>
 
+        <ImageView
+                android:id="@+id/img_co2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_co2"
+                app:layout_constraintEnd_toStartOf="@+id/tv_air_title"
+                android:layout_marginEnd="@dimen/margin_8"
+                app:layout_constraintTop_toTopOf="@+id/tv_air_title"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_air_title"/>
+
+        <ImageView
+                android:id="@+id/img_thermometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_thermometer"
+                app:layout_constraintEnd_toStartOf="@+id/tv_temperature_title"
+                android:layout_marginEnd="@dimen/margin_8"
+                app:layout_constraintTop_toTopOf="@+id/tv_temperature_title"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_temperature_title"/>
+        <ImageView
+                android:id="@+id/img_sun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_sun"
+                app:layout_constraintEnd_toStartOf="@+id/tv_weather_title"
+                android:layout_marginEnd="@dimen/margin_8"
+                app:layout_constraintTop_toTopOf="@+id/tv_weather_title"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_weather_title"/>
+
+        <ImageView
+                android:id="@+id/img_wind_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_wind_sign"
+                app:layout_constraintEnd_toStartOf="@+id/tv_wind_title"
+                android:layout_marginEnd="@dimen/margin_8"
+                app:layout_constraintTop_toTopOf="@+id/tv_wind_title"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_wind_title"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

@@ -24,10 +24,10 @@ class WeatherViewHolder : BaseViewHolder<WeatherDay> {
     var tvWeather: TextView
 
     override fun bind(item: WeatherDay) {
-        tvDate.setText(item.getDate())
-        tvDay.setText(item.temperature.day.toString())
-        tvMin.setText(item.temperature.min.toString())
-        tvMax.setText(item.temperature.max.toString())
-        tvWeather.setText(item.weather.get(0).main)
+        tvDate.text = item.getDate()
+        tvDay.text = item.temperature.day.toString()
+        tvMin.text = item.temperature.min.toString()
+        tvMax.text = item.temperature.max.toString()
+        tvWeather.text = item.weather[0].main
     }
 }

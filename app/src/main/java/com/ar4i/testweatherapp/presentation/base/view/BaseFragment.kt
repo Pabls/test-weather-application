@@ -25,10 +25,6 @@ abstract class BaseFragment : Fragment(), IBaseView {
         inject()
     }
 
-    override fun showLoading() {}
-
-    override fun hideLoading() {}
-
     override fun showMessage(message: String) {
         Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
