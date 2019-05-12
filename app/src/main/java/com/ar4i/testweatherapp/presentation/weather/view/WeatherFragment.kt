@@ -92,10 +92,10 @@ class WeatherFragment : BaseFragment(), IWeatherView {
         progressBar = activity!!.findViewById(R.id.progressBar)
         adapter = WeatherAdapter()
         rvDays.adapter = adapter
-        intToolbar()
+        initToolbar()
     }
 
-    private fun intToolbar() {
+    private fun initToolbar() {
         toolbar = activity!!.findViewById(R.id.toolbar)
         toolbar.navigationIcon = null
         toolbar.title = getString(R.string.app_name)

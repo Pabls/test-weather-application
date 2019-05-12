@@ -58,27 +58,31 @@ class DetailsFragment : Fragment() {
     }
 
     private fun initView() {
-        tvDate = activity!!.findViewById(R.id.tv_date)
-        tvMorningTemp = activity!!.findViewById(R.id.tv_morning_temp)
-        tvDayTemp = activity!!.findViewById(R.id.tv_day_temp)
-        tvEveningTemp = activity!!.findViewById(R.id.tv_evening_temp)
-        tvNightTemp = activity!!.findViewById(R.id.tv_night_temp)
-        tvHumidity = activity!!.findViewById(R.id.tv_humidity)
-        tvPressure = activity!!.findViewById(R.id.tv_pressure)
-        tvSpeed = activity!!.findViewById(R.id.tv_speed)
-        tvDeg = activity!!.findViewById(R.id.tv_deg)
-        tvDescription = activity!!.findViewById(R.id.tv_description)
-        tvClouds = activity!!.findViewById(R.id.tv_clouds)
-        tvSnow = activity!!.findViewById(R.id.tv_snow)
-        intToolbar()
+        tvDate = findViewById(R.id.tv_date)
+        tvMorningTemp = findViewById(R.id.tv_morning_temp)
+        tvDayTemp = findViewById(R.id.tv_day_temp)
+        tvEveningTemp = findViewById(R.id.tv_evening_temp)
+        tvNightTemp = findViewById(R.id.tv_night_temp)
+        tvHumidity = findViewById(R.id.tv_humidity)
+        tvPressure = findViewById(R.id.tv_pressure)
+        tvSpeed = findViewById(R.id.tv_speed)
+        tvDeg = findViewById(R.id.tv_deg)
+        tvDescription = findViewById(R.id.tv_description)
+        tvClouds = findViewById(R.id.tv_clouds)
+        tvSnow = findViewById(R.id.tv_snow)
+        initToolbar()
     }
 
-    private fun intToolbar() {
+    private fun initToolbar() {
         toolbar = activity!!.findViewById(R.id.toolbar)
         toolbar.setNavigationIcon(R.drawable.ic_arrow)
-        toolbar.setNavigationOnClickListener(View.OnClickListener {
+        toolbar.setNavigationOnClickListener {
             activity?.onBackPressed()
-        })
+        }
+    }
+
+    private fun findViewById(id: Int): TextView {
+        return activity!!.findViewById(id)
     }
 
     private fun setDataToView(weatherDay: WeatherDay) {
