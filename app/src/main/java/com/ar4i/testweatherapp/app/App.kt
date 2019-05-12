@@ -3,8 +3,7 @@ package com.ar4i.testweatherapp.app
 import android.app.Application
 import com.ar4i.testweatherapp.app.di.components.ApplicationComponent
 import com.ar4i.testweatherapp.app.di.components.DaggerApplicationComponent
-import com.facebook.stetho.Stetho
-
+import com.ar4i.testweatherapp.app.di.modules.AppModule
 
 class App : Application() {
 
@@ -16,12 +15,7 @@ class App : Application() {
         super.onCreate()
         appComponent = DaggerApplicationComponent
             .builder()
+            .appModule(AppModule(this))
             .build()
-
-        initStetho()
-    }
-
-    private fun initStetho() {
-        Stetho.initializeWithDefaults(this)
     }
 }

@@ -1,8 +1,8 @@
 package com.ar4i.testweatherapp.app.di.modules
 
 import com.ar4i.testweatherapp.BuildConfig
+import com.ar4i.testweatherapp.data.network.ApiUtils
 import com.ar4i.testweatherapp.data.network.WeatherApi
-import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -24,16 +24,8 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideStethoInterceptor(): StethoInterceptor {
-        return StethoInterceptor()
-    }
-
-    @Provides
-    @Singleton
-    fun provideOkHttpClient(stethoInterceptor: StethoInterceptor): OkHttpClient {
-        return OkHttpClient.Builder()
-            .addNetworkInterceptor(stethoInterceptor)
-            .build()
+    fun provideOkHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder().build()
     }
 
     @Provides
@@ -52,5 +44,4 @@ class NetworkModule {
     fun provideApi(retrofit: Retrofit): WeatherApi {
         return retrofit.create(WeatherApi::class.java)
     }
-
 }

@@ -93,7 +93,8 @@ class DetailsFragment : Fragment() {
         tvDeg.text = weatherDay.degrees.toString()
         tvDescription.text = weatherDay.weather[0].description
         tvClouds.text = weatherDay.clouds.toString()
-        tvSnow.text = weatherDay.snow?.toString()
+        tvSnow.text =
+            weatherDay.snow?.toString() ?: resources.getString(R.string.details_fragment_text_default_snow_value)
         toolbar.title = weatherDay.getDate()
     }
 }
